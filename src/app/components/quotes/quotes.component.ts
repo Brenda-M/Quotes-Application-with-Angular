@@ -15,6 +15,9 @@ export class QuotesComponent implements OnInit {
     new Quotes (5, 'I doubt vodka is the answer. But it is worth a shot', 'Larry F', 'User95')
   ]
   
+  moreDetails(index){
+    this.quotes[index].showDetails=!this.quotes[index].showDetails
+  }
   constructor() {
 
    }

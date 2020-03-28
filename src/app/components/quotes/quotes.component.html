@@ -1,17 +1,20 @@
-<div class="container">
-  <div class="card card-body mb-4">
-    <ul class="list-unstyled">
-      <li class="card card-body mb-3" *ngFor="let quote of quotes">
-        <div>
-          <p>"{{ quote.quote }}"</p>
-          <h6><b>~{{quote.authorName}}</b> </h6>
-          <button><i class="fa fa-thumbs-up"></i></button>
-          <button><i class="fa fa-thumbs-down"></i></button>
-        </div>
-        
-        <hr>
-        <app-quotes-info [quote]='quote'></app-quotes-info>
-      </li>
-    </ul>
-  </div> 
+<div class="container row">
+    <div class="col-md-10">
+      <div class="card card-body mb-3">
+        <ul class="list-unstyled">
+          <li class="card card-body mb-2" *ngFor="let quote of quotes; let i=index">
+            <div>
+              <p>"{{ quote.quote }}"
+                <button class="btn btn-dark btn-sm more" (click)='moreDetails(i)'><i [ngClass]="!quote.showDetails ? 'fa fa-plus' : 'fa fa-minus'"></i></button>
+              </p>
+              <h6><b>~{{quote.authorName}}</b> </h6>   
+              <button><i class="fa fa-thumbs-up"></i></button>
+              <button><i class="fa fa-thumbs-down"></i></button>
+            </div>  
+            <hr>
+            <app-quotes-info [quote]='quote' *ngIf='quote.showDetails'></app-quotes-info>
+          </li>
+        </ul>
+      </div> 
+    </div>    
 </div>
