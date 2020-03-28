@@ -1,8 +1,17 @@
 <div class="container">
-  <ul class="list-unstyled">
-    <li class="card card-body mb-3" *ngFor="let quote of quotes">
-      <h4>{{ quote.quote }}</h4>
-      <h6> {{quote.authorName}}</h6>
-    </li>
-  </ul>
+  <div class="card card-body mb-4">
+    <ul class="list-unstyled">
+      <li class="card card-body mb-3" *ngFor="let quote of quotes">
+        <div>
+          <p>"{{ quote.quote }}"</p>
+          <h6><b>~{{quote.authorName}}</b> </h6>
+          <button><i class="fa fa-thumbs-up"></i></button>
+          <button><i class="fa fa-thumbs-down"></i></button>
+        </div>
+        
+        <hr>
+        <app-quotes-info [quote]='quote'></app-quotes-info>
+      </li>
+    </ul>
+  </div> 
 </div>
