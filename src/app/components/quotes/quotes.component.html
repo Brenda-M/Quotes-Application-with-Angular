@@ -1,1 +1,8 @@
-<p>quotes works!</p>
+<div class="container">
+  <ul class="list-unstyled">
+    <li class="card card-body mb-3" *ngFor="let quote of quotes">
+      <h4>{{ quote.quote }}</h4>
+      <h6> {{quote.authorName}}</h6>
+    </li>
+  </ul>
+</div>
