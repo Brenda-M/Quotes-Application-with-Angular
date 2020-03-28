@@ -6,5 +6,7 @@ export class Quotes {
     public quote: string,
     public submittedBy: string,
     public authorName: string,
-  ){}
+  ){
+  
+  }
 }
