@@ -1,49 +1,25 @@
-
-<!-- <div class="container newquote">
+<div class="container quotes-form">
   <div class="card card-body">
-      <form #entryForm='ngForm'> -->
-        <!-- <form #entryForm='ngForm' (ngsubmit)= "onSubmit()">
+        <form #entryForm='ngForm' (ngSubmit)= "submitQuote()">
           <div class="form-group entry-areas">
-            <input type="text" class="form-control" id="authorName" name="author" required [(ngModel)]="newQuote.authorName">
+            <input type="text" class="form-control" id="authorName" name="author" #author='ngModel' [(ngModel)]="newQuote.authorName" required>
             <i class="fa fa-user" aria-hidden="true"></i>
             <label for="author">Author's Name</label>
           </div>
           {{newQuote.authorName}}
           <div class="form-group entry-areas">
-            <textarea type="text" class="form-control" id="form" name="quote"></textarea>
+            <textarea type="text" class="form-control" id="form" name="quote" [(ngModel)]="newQuote.quote" #quote='ngModel'></textarea>
             <i class="fa fa-quote-left" aria-hidden="true" required></i>
             <label for="quote">Enter Quote</label>
           </div>
+          {{newQuote.quote}}
           <div class="form-group entry-areas">
-            <input type="text" class="form-control" id="submittedBy" name="poster" >
-            <i class="fa fa-user" aria-hidden="true" required></i>
-            <label>Submitted By</label>
-          </div>
-        <button (click)="fireEvent()" [disabled]="!enableAdd" class="btn btn-primary btn-block mb-3" type="submit">Submit Quote</button>
-    </form>
-  </div> 
-</div>  -->
-
-<div class="container newquote">
-  <div class="card card-body">
-      <!-- <form #entryForm='ngForm'> -->
-        <form #entryForm='ngForm' (ngsubmit)= "onSubmit()">
-          <div class="form-group entry-areas">
-            <input type="text" class="form-control" id="authorName" name="author" [(ngModel)]="newQuote.authorName" required>
-            <i class="fa fa-user" aria-hidden="true"></i>
-            <label for="author">Author's Name</label>
-          </div>
-          <div class="form-group entry-areas">
-            <textarea type="text" class="form-control" id="form" name="quote" [(ngModel)]="newQuote.quote"></textarea>
-            <i class="fa fa-quote-left" aria-hidden="true" required></i>
-            <label for="quote">Enter Quote</label>
-          </div>
-          <div class="form-group entry-areas">
-            <input type="text" class="form-control" id="submittedBy" name="poster" [(ngModel)]="newQuote.submittedBy" required>
+            <input type="text" class="form-control" id="submittedBy" name="poster" [(ngModel)]="newQuote.submittedBy" #poster='ngModel' required>
             <i class="fa fa-user" aria-hidden="true"></i>
             <label>Submitted By</label>
           </div>
-        <button (click)="fireEvent()" [disabled]="newQuote.authorName == '' || newQuote.quote == '' || newQuote.submittedBy == ''" class="btn btn-primary btn-block mb-3" type="submit">Submit Quote</button>
+          {{newQuote.submittedBy}}
+        <button [disabled]="newQuote.authorName == '' || newQuote.quote == '' || newQuote.submittedBy == ''" class="btn btn-primary btn-block mb-3" type="submit">Submit Quote</button>
     </form>
   </div> 
 </div>

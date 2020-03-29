@@ -1,7 +1,7 @@
 <div class="jumbotron jumbotron-fluid text-center">
   <h2>QuotesHotel.Com</h2>
 </div>
-<div class="container">
+<div class="container mainbody">
   <div class="row">
     <div class="col-md-7">
       <div class="card card-body mb-3">
@@ -29,7 +29,7 @@
       </div> 
     </div> 
       <div class="col-md-5">
-        <app-add-quote-form></app-add-quote-form>
+        <app-add-quote-form (addQuote)="addNewQuote($event)"></app-add-quote-form>
       </div>
   </div> 
 </div>

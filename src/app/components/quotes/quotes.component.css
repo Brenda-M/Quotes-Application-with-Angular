@@ -2,6 +2,12 @@
   float: right;
 }
 
+p{
+  font-family: 'Slabo 27px', serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+
 .fa-thumbs-up, .fa-thumbs-down{
   font-size: 20px;
   width: 40px;
@@ -11,8 +17,6 @@
 .space{
   margin-right: 10px;
 }
-
-
 
 .fa-thumbs-up:hover, .fa-thumbs-down:hover{
   color: skyblue;

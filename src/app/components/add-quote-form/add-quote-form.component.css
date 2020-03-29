@@ -1,5 +1,5 @@
 
- .newquote{
+ .quotes-form{
   position: absolute;
   background: #fff;
   box-sizing: border-box;
@@ -21,7 +21,7 @@
   transition: 0.3s;
 }
 
-.newquote input, .newquote textarea{
+.quotes-form input, .quotes-form textarea{
   width: 100%;
   box-sizing: border-box;
   outline: none;
