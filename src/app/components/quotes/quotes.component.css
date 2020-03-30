@@ -5,8 +5,15 @@
 }
 
 .jumbotron{
-  background-color: #C06C84;
+  background-color: rgb(243, 141, 170);
+}
+
+.page-footer{
+  background-color: rgb(243, 141, 170);
   font-weight: bold;
+  color: black;
+  height: 20vh;
+  padding-top: 50px;
 }
 
 .card-body {
