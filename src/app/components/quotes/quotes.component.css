@@ -16,6 +16,12 @@
   padding-top: 50px;
 }
 
+.title{
+  font-size: 40px;
+  font-weight: 600;
+  line-height: 2;
+}
+
 .card-body {
   background-color: rgb(212, 237, 247);
   padding-top: 50px;
