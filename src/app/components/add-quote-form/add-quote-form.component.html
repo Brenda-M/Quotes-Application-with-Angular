@@ -2,23 +2,31 @@
   <div class="card card-body">
         <form #entryForm='ngForm' (ngSubmit)= "submitQuote()">
           <div class="form-group entry-areas">
-            <input type="text" class="form-control" id="authorName" name="author" #author='ngModel' [(ngModel)]="newQuote.authorName" required>
+            <input type="text" class="form-control" id="authorName" name="author" #author='ngModel' [(ngModel)]="newQuote.authorName" 
+              [ngClass]="{'is-invalid': author.errors && author.touched}" required>
             <i class="fa fa-user" aria-hidden="true"></i>
             <label for="author">Author's Name</label>
+            <div [hidden]="!author.errors?.required"class="invalid-feedback">
+              <p>Author name required</p>
+            </div>
           </div>
-          {{newQuote.authorName}}
           <div class="form-group entry-areas">
-            <textarea type="text" class="form-control" id="form" name="quote" [(ngModel)]="newQuote.quote" #quote='ngModel'></textarea>
-            <i class="fa fa-quote-left" aria-hidden="true" required></i>
+            <textarea type="text" class="form-control" id="form" name="quote" [(ngModel)]="newQuote.quote" #quote='ngModel'
+              [ngClass]="{'is-invalid': quote.errors && quote.touched}" required></textarea>
+            <i class="fa fa-quote-left" aria-hidden="true"></i>
             <label for="quote">Enter Quote</label>
+            <div [hidden]='!quote.errors?.required'class="invalid-feedback">
+              <p>Please enter a quote</p>
+            </div>
           </div>
-          {{newQuote.quote}}
           <div class="form-group entry-areas">
-            <input type="text" class="form-control" id="submittedBy" name="poster" [(ngModel)]="newQuote.submittedBy" #poster='ngModel' required>
+            <input type="text" class="form-control" id="submittedBy" name="poster" [(ngModel)]="newQuote.submittedBy" #poster='ngModel' [ngClass]="{'is-invalid': poster.touched && poster.errors}" required>
             <i class="fa fa-user" aria-hidden="true"></i>
             <label>Submitted By</label>
+            <div [hidden]='!poster.errors?.required' class="invalid-feedback">
+              <p>Name of submitter is required</p>
+            </div>
           </div>
-          {{newQuote.submittedBy}}
         <button [disabled]="newQuote.authorName == '' || newQuote.quote == '' || newQuote.submittedBy == ''" class="btn btn-primary btn-block mb-3" type="submit">Submit Quote</button>
     </form>
   </div> 

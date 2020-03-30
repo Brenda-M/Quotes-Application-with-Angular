@@ -1,1 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+@import url('https://fonts.googleapis.com/css?family=Bangers|Lobster+Two|Slabo+27px|Yeseva+One&display=swap');
+
+body{
+  background-image: url('./assets/background.gif');
+}

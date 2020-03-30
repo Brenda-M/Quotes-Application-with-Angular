@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { Quotes } from '../../models/quotes'
 
 @Component({
@@ -14,33 +14,33 @@ export class QuotesComponent implements OnInit {
     new Quotes (4, 'Always borrow money from a pessimist. He won\'t expect it back', 'Oscar Wilde', 'Ian Stan', new Date (2020, 0, 1), 0, 0),
     new Quotes (5, 'I doubt vodka is the answer. But it is worth a shot', 'Larry F', 'User95', new Date (2019, 6, 25),0, 0)
   ]
+  
+  counter:number;
+  mostUpvotedQuote: number;
+  currentLikes: number;
+  @ViewChild('entryForm') form: any;
 
-  prevNum:number
-  lastNum:number
-  counter:number
   
   moreDetails(index){
     this.quotes[index].showDetails=!this.quotes[index].showDetails
   }
 
   highestLikes(){
-    this.prevNum = 0
-    this.lastNum = 0
+    this.mostUpvotedQuote = this.quotes[0].upvote
     for (this.counter = 0; this.counter < this.quotes.length;this.counter++){
-      this.lastNum = this.quotes[this.counter].upvote;
-      if(this.lastNum > this.prevNum){
-        this.prevNum = this.lastNum
+      this.currentLikes = this.quotes[this.counter].upvote;
+      if(this.currentLikes > this.mostUpvotedQuote){
+        this.mostUpvotedQuote = this.currentLikes 
       }
     }
-    return this.prevNum 
+      return this.mostUpvotedQuote
   }
-  
-  addNewQuote(quote){
-    let quoteLength = this.quotes.length;
-    quote.id = quoteLength+1;
-    quote.completeDate = new Date(quote.completeDate)
-    this.quotes.unshift(quote)
+  addNewQuote(value){
+  value.submissionDate = new Date(value.submissionDate);
+  this.quotes.unshift(value);
+  this.form.reset();
   }
+
 
   quoteDelete(isDelete, index){
     if (isDelete) {
