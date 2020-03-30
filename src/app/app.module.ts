@@ -9,6 +9,7 @@ import { QuotesComponent } from './components/quotes/quotes.component';
 import { DateCountPipe } from './pipes/date-count.pipe';
 import { HighlightDirective } from './directives/highlight.directive';
 
+
 @NgModule({
   declarations: [
     AppComponent,
