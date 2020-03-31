@@ -1,7 +1,7 @@
 <div class="container quotes-form">
   <h6 class="text-center quote-text">Would you like to share your thoughts? <br> You can do so by adding your own quote below</h6>
   <div class="card card-body">
-        <form #entryForm='ngForm' (ngSubmit)= "submitQuote()">
+        <form #entryForm='ngForm' (ngSubmit)= "submitQuote(entryForm)">
           <div class="form-group entry-areas">
             <input type="text" class="form-control" id="authorName" name="author" #author='ngModel' [(ngModel)]="newQuote.authorName" 
               [ngClass]="{'is-invalid': author.errors && author.touched}" required>
