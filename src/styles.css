@@ -4,8 +4,8 @@
 @import url('https://fonts.googleapis.com/css?family=Bangers|Dancing+Script|Lobster+Two|Spicy+Rice|Yeseva+One&display=swap');
 
 body{
-  /* background-image: url('./assets/background.gif'); */
   background-image: url('./assets/801632.jpg');
-  background-repeat: no-repeat;
   background-size: cover;
 }
+
+
