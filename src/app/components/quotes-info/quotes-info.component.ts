@@ -15,7 +15,9 @@ export class QuotesInfoComponent implements OnInit {
   this.isDelete.emit(complete);
   }
   
-  // constructor(); { }
+  constructor() {
+
+   }
 
   ngOnInit() {
   }

@@ -10,6 +10,7 @@ export class AddQuoteFormComponent implements OnInit {
 
   @Output() addQuote = new EventEmitter<Quotes>();
   @ViewChild ('entryForm') form: any;
+  
   enableAdd: boolean = false;
   newQuote = new Quotes(0, "", "", "", new Date(), 0, 0);
 
