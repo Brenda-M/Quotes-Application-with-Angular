@@ -12,7 +12,8 @@ export class AddQuoteFormComponent implements OnInit {
   @ViewChild ('entryForm') form: any;
   
   enableAdd: boolean = false;
-  newQuote: Quotes;
+  newQuote = new Quotes(0, "", "", "", new Date(), 0, 0);
+ 
 
   submitQuote(value){ 
     this.addQuote.emit(this.newQuote); 
@@ -22,7 +23,7 @@ export class AddQuoteFormComponent implements OnInit {
   
   constructor() { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }

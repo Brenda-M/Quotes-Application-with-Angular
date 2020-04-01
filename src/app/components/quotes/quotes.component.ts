@@ -39,8 +39,7 @@ export class QuotesComponent implements OnInit {
     value.submissionDate = new Date(value.submissionDate);
     this.quotes.unshift(value);
   }
-
-
+  
   quoteDelete(isDelete, index){
     if (isDelete) {
       let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].authorName}'s quote?`)
