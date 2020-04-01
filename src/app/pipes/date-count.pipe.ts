@@ -7,7 +7,7 @@ export class DateCountPipe implements PipeTransform {
   transform(value: any): any {
     if (value) {
         const seconds = Math.floor((new Date().getTime() - new Date(value).getTime()) / 1000);
-        if (seconds < 60)
+        if (seconds < 45)
             return 'Just now';
         const intervals = {
             'year': 31536000,

@@ -20,10 +20,6 @@ export class QuotesComponent implements OnInit {
   mostUpvotedQuote: number;
   currentLikes: number;
 
-  moreDetails(index){
-    this.quotes[index].showDetails=!this.quotes[index].showDetails
-  }
-
   highestLikes(){
     this.mostUpvotedQuote = this.quotes[0].upvote
     for (this.counter = 0; this.counter < this.quotes.length;this.counter++){
@@ -35,10 +31,15 @@ export class QuotesComponent implements OnInit {
       return this.mostUpvotedQuote
   }
 
-  addNewQuote(value){
-  value.submissionDate = new Date(value.submissionDate);
-  this.quotes.unshift(value);
+  moreDetails(index){
+    this.quotes[index].showDetails=!this.quotes[index].showDetails
   }
+
+  addNewQuote(value){
+    value.submissionDate = new Date(value.submissionDate);
+    this.quotes.unshift(value);
+  }
+
 
   quoteDelete(isDelete, index){
     if (isDelete) {

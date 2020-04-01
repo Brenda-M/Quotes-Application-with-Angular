@@ -12,7 +12,7 @@
             </div>
           </div>
           <div class="form-group entry-areas">
-            <textarea type="text" class="form-control" id="form" name="quote" [(ngModel)]="newQuote.quote" #quote='ngModel'
+            <textarea type="text" class="form-control" id="enterQuote" name="quote" [(ngModel)]="newQuote.quote" #quote='ngModel'
               [ngClass]="{'is-invalid': quote.errors && quote.touched}" required></textarea>
             <i class="fa fa-quote-left" aria-hidden="true"></i>
             <label for="quote">Enter Quote</label>
